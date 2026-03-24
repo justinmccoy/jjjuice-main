@@ -37,7 +37,8 @@ const ComingSoon = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('¡Gracias! Wir informieren dich als Erstes.');
+    const email = e.target.querySelector('input[type="email"]').value;
+    window.location.href = `mailto:hello@jjjuice.de?subject=Newsletter Anmeldung&body=Hallo, ich möchte über den Launch informiert werden.%0D%0A%0D%0AMeine E-Mail: ${email}`;
   };
 
   return (

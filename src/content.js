@@ -32,23 +32,23 @@ export const content = {
     },
     features: [
       {
-        title: "Kleine Chargen",
+        title: "Kleine Mengen",
         description: "Handgefertigt in kleinen Mengen für kompromisslose Qualität und Geschmack."
       },
       {
-        title: "Täglich Frisch",
-        description: "Frisch zubereitet mit Zutaten von lokalen mexikanischen Bauernhöfen."
+        title: "Frische Zutaten",
+        description: "Frisch zubereitet mit Zutaten aus München."
       },
       {
         title: "Mit Liebe Gemacht",
-        description: "Familienrezepte, die seit Generationen von Salseros weitergegeben werden."
+        description: "Die gleiche Salsa, die ich für Freunde und Familie zubereite."
       }
     ]
   },
   
   footer: {
     brand: "JJJUICE",
-    copyright: "© 2026 JJJUICE SALSA CO. ALLE RECHTE VORBEHALTEN"
+    copyright: "© 2026 JJJ GMBH. ALLE RECHTE VORBEHALTEN"
   }
 };
 

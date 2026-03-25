@@ -1,7 +1,9 @@
+import { content } from '../content';
+
 const Footer = () => {
   return (
     <footer>
-      <div className="footer-brand">JJJUICE</div>
+      <div className="footer-brand">{content.footer.brand}</div>
       <div className="social-links">
         <a href="#" className="social-link">
           <svg viewBox="0 0 24 24">
@@ -19,7 +21,7 @@ const Footer = () => {
           </svg>
         </a>
       </div>
-      <p className="copyright">© 2026 JJJUICE SALSA CO. ALLE RECHTE VORBEHALTEN</p>
+      <p className="copyright">{content.footer.copyright}</p>
     </footer>
   );
 };

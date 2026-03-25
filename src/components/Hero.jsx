@@ -1,3 +1,5 @@
+import { content } from '../content';
+
 const Hero = () => {
   return (
     <section className="hero">
@@ -13,19 +15,19 @@ const Hero = () => {
         
         <div className="headline">
           <h1>
-            <span>SPÜR</span>
-            <span>DAS</span>
-            <span>FEUER</span>
+            {content.hero.headline.map((word, index) => (
+              <span key={index}>{word}</span>
+            ))}
           </h1>
-          <p className="subheadline">Authentische mexikanische Salsa – mit Tradition, Liebe und der perfekten Schärfe.</p>
-          <a href="#notify" className="cta-button">Benachrichtigen</a>
+          <p className="subheadline">{content.hero.subheadline}</p>
+          <a href="#notify" className="cta-button">{content.hero.ctaButton}</a>
         </div>
       </div>
       
       <div className="hero-right">
         <div className="logo-container">
           <div className="logo-glow"></div>
-          <img src="/logo.png" alt="JJJUICE Logo" />
+          <img src="/logo.png" alt={content.hero.logoAlt} />
         </div>
       </div>
     </section>

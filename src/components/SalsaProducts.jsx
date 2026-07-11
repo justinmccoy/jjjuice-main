@@ -1,7 +1,5 @@
 import { content } from '../content';
 
-const placeholderColors = ['#7B3A2A', '#3A6B3A'];
-
 const SalsaProducts = () => {
   return (
     <section className="salsa-products">
@@ -10,12 +8,8 @@ const SalsaProducts = () => {
       <div className="salsa-grid">
         {content.salsas.products.map((product, index) => (
           <div key={index} className="salsa-card">
-            <div
-              className="salsa-image-placeholder"
-              style={{ background: placeholderColors[index] }}
-              aria-label={product.imageAlt}
-            >
-              <span className="salsa-image-label">{product.name}</span>
+            <div className="salsa-image-wrapper">
+              <img src={product.image} alt={product.imageAlt} className="salsa-image" />
             </div>
 
             <div className="salsa-info">

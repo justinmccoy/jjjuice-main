@@ -50,18 +50,20 @@ export const content = {
     sectionTitle: "Unsere Salsas",
     products: [
       {
-        name: "Salsa Roja",
+        name: "Mad Hot Salsa",
         tagline: "Klassisch. Feurig. Unvergesslich.",
-        description: "Unsere Salsa Roja ist ein Rezept aus der Familientradition – langsam geröstet, handgemahlen und mit genau der richtigen Schärfe. Perfekt zu Tacos, Nachos oder direkt vom Löffel.",
+        description: "Entstanden unter blutroten Sonnenuntergängen in West-Texas — und die merkt man. Feuergeröstete Chilis bringen die Schärfe, wie wir sie in Austin lieben gelernt haben: kräftig, rauchig, kompromisslos. Die Salsa für lange Margarita-Abende, eiskalte Bäder in Quellseen und Tische voller Freunde, die immer noch einen Chip nachlegen. Mad hot. Verdammt gut.",
         ingredients: "Tomaten, Chipotle, Knoblauch, Zwiebel, Koriander, Limette, Salz",
-        imageAlt: "Salsa Roja"
+        image: "/mad-hot.png",
+        imageAlt: "Mad Hot Salsa"
       },
       {
-        name: "Salsa Verde",
+        name: "Nice'n'Mild Salsa",
         tagline: "Frisch. Herb. Unwiderstehlich.",
-        description: "Tomatillos, grüne Chilis und frischer Koriander vereinen sich zu einer Salsa, die gleichzeitig frisch und komplex schmeckt. Ideal zu gegrilltem Fleisch oder als Dip.",
+        description: "Der ganze tiefe, mexikanisch inspirierte Geschmack unserer Texas-Jahre — geröstete Tomaten, geschmorte Chilis, lange Abende, an denen Rezepte über den Tisch wandern — nur ohne das Feuer. Mild genug für alle am Tisch, von der Oma bis zu den Kleinen. Sonnenuntergang im Glas: warm, sanft und zum Teilen gemacht.",
         ingredients: "Tomatillos, Jalapeño, Knoblauch, Zwiebel, Koriander, Limette, Salz",
-        imageAlt: "Salsa Verde"
+        image: "/nice-n-mild.png",
+        imageAlt: "Nice'n'Mild Salsa"
       }
     ]
   },

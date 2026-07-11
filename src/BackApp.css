@@ -16,25 +16,14 @@ footer {
 }
 
 :root {
-    /* JJ's Juice — pulled straight from the label art */
-    --chili-red: #E2222A;        /* the JJ peppers */
-    --hot-pink: #EE2D6F;         /* Mad Hot outer ring */
-    --electric-purple: #5B2ED0;  /* Nice'n'Mild ring + wordmark drop shadows */
-    --grape-shadow: #2B0C60;     /* deep purple for hard shadows */
-    --burnt-orange: #EE7124;     /* Mad Hot center oval (also: Austin) */
-    --agave-gold: #F2A93B;       /* "Juice" script lettering */
-    --chili-green: #3E8E3E;      /* pepper stems — use sparingly */
-    --cream: #FDF3E3;
-    --ink: #190B26;              /* warm aubergine near-black */
+    --melon-mambo: #E84A81;
+    --fresh-fig: #9E4F6E;
+    --mango-melody: #F5A847;
+    --lemon-lime: #D4D94E;
+    --garden-green: #5A7F5E;
+    --cream: #FDF5E6;
+    --black: #0A0A0A;
     --white: #FFFFFF;
-
-    /* legacy aliases — old token names now resolve to the label palette */
-    --melon-mambo: var(--hot-pink);
-    --fresh-fig: var(--electric-purple);
-    --mango-melody: var(--agave-gold);
-    --lemon-lime: var(--agave-gold);
-    --garden-green: var(--chili-green);
-    --black: var(--ink);
 }
 
 html {
@@ -45,11 +34,25 @@ html {
 
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background: var(--cream);
-    color: var(--ink);
+    background: var(--black);
+    color: var(--cream);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+/* Grain texture overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1000;
 }
 
 /* Hero Section - Horizontal Layout */
@@ -61,7 +64,7 @@ body {
 }
 
 .hero-left {
-    background: var(--hot-pink);
+    background: linear-gradient(135deg, var(--melon-mambo) 0%, var(--fresh-fig) 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,6 +72,20 @@ body {
     padding: 4rem 5rem;
     position: relative;
     overflow: hidden;
+}
+
+/* Decorative pattern */
+.hero-left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(245, 168, 71, 0.15) 0%, transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(245, 168, 71, 0.1) 0%, transparent 25%);
+    pointer-events: none;
 }
 
 .nav {
@@ -121,6 +138,7 @@ body {
     line-height: 0.95;
     letter-spacing: -0.02em;
     color: var(--cream);
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.15);
     margin-bottom: 1.5rem;
     text-transform: uppercase;
 }
@@ -132,7 +150,7 @@ body {
 .subheadline {
     font-size: 1.05rem;
     font-weight: 400;
-    color: rgba(253, 243, 227, 0.85);
+    color: rgba(253, 245, 230, 0.85);
     max-width: 340px;
     margin: 0 0 2.5rem 0;
     line-height: 1.6;
@@ -151,6 +169,7 @@ body {
     text-transform: uppercase;
     border-radius: 50px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(212, 217, 78, 0.3);
     border: 2px solid var(--lemon-lime);
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
@@ -159,18 +178,33 @@ body {
 
 .cta-button:hover {
     transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(212, 217, 78, 0.5);
     background: transparent;
     color: var(--cream);
     border-color: var(--cream);
 }
 
 .hero-right {
-    background: var(--burnt-orange);
+    background: linear-gradient(160deg, var(--garden-green) 0%, #4A6B4E 50%, #3D5A40 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
+}
+
+.hero-right::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(ellipse at center, rgba(245, 168, 71, 0.12) 0%, transparent 55%);
+    animation: pulse 5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.05); opacity: 0.7; }
 }
 
 .logo-container {
@@ -188,14 +222,39 @@ body {
 .logo-container img {
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 10px 24px rgba(0,0,0,0.25));
+    filter: drop-shadow(0 25px 50px rgba(0,0,0,0.5));
+}
+
+/* Glow effect behind logo */
+.logo-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 130%;
+    height: 130%;
+    background: radial-gradient(ellipse, rgba(245, 168, 71, 0.3) 0%, transparent 65%);
+    filter: blur(40px);
+    z-index: -1;
+}
+
+/* Decorative elements on right side */
+.hero-right::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    right: -30%;
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(232, 74, 129, 0.12) 0%, transparent 50%);
+    filter: blur(60px);
 }
 
 /* Salsa Products Section */
 .salsa-products {
     padding: 6rem 2rem;
     text-align: center;
-    background: var(--cream);
+    background: var(--black);
 }
 
 .salsa-grid {
@@ -207,18 +266,16 @@ body {
 }
 
 .salsa-card {
-    background: var(--white);
-    border: 1px solid rgba(25, 11, 38, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 4px;
     overflow: hidden;
     text-align: left;
-    display: flex;
-    flex-direction: column;
 }
 
 .salsa-image-wrapper {
     width: 100%;
-    padding: 2rem 2rem 0;
+    padding: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -232,9 +289,6 @@ body {
 
 .salsa-info {
     padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
 }
 
 .salsa-name {
@@ -242,14 +296,14 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--burnt-orange);
+    color: var(--mango-melody);
     margin-bottom: 0.4rem;
 }
 
 .salsa-tagline {
     font-size: 0.85rem;
     letter-spacing: 0.08em;
-    color: rgba(25, 11, 38, 0.55);
+    color: rgba(253, 245, 230, 0.5);
     margin-bottom: 1.2rem;
     text-transform: uppercase;
 }
@@ -257,15 +311,13 @@ body {
 .salsa-description {
     font-size: 0.95rem;
     line-height: 1.7;
-    color: rgba(25, 11, 38, 0.8);
+    color: rgba(253, 245, 230, 0.8);
     margin-bottom: 1.5rem;
-    flex: 1;
 }
 
 .salsa-ingredients {
-    border-top: 1px solid rgba(25, 11, 38, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding-top: 1.2rem;
-    margin-top: auto;
 }
 
 .ingredients-label {
@@ -273,13 +325,13 @@ body {
     font-size: 0.65rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--burnt-orange);
+    color: var(--mango-melody);
     margin-bottom: 0.4rem;
 }
 
 .ingredients-text {
     font-size: 0.85rem;
-    color: rgba(25, 11, 38, 0.6);
+    color: rgba(253, 245, 230, 0.55);
     line-height: 1.6;
 }
 
@@ -295,7 +347,7 @@ body {
 .coming-soon {
     padding: 6rem 2rem;
     text-align: center;
-    background: var(--cream);
+    background: var(--black);
     position: relative;
 }
 
@@ -306,7 +358,7 @@ body {
     left: 0;
     right: 0;
     height: 1px;
-    background: var(--burnt-orange);
+    background: linear-gradient(90deg, transparent, var(--mango-melody), transparent);
 }
 
 .section-title {
@@ -314,7 +366,7 @@ body {
     font-weight: 500;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--burnt-orange);
+    color: var(--mango-melody);
     margin-bottom: 2rem;
 }
 
@@ -332,7 +384,7 @@ body {
 .countdown-number {
     font-size: 4rem;
     font-weight: 200;
-    color: var(--ink);
+    color: var(--cream);
     line-height: 1;
     letter-spacing: -0.02em;
 }
@@ -342,7 +394,7 @@ body {
     font-weight: 500;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(25, 11, 38, 0.55);
+    color: rgba(253, 245, 230, 0.5);
     margin-top: 0.5rem;
 }
 
@@ -361,10 +413,10 @@ body {
 .signup-input {
     flex: 1;
     padding: 1rem 1.5rem;
-    background: var(--white);
-    border: 1px solid rgba(25, 11, 38, 0.2);
+    background: rgba(253, 245, 230, 0.05);
+    border: 1px solid rgba(253, 245, 230, 0.15);
     border-radius: 50px;
-    color: var(--ink);
+    color: var(--cream);
     font-family: inherit;
     font-size: 0.95rem;
     outline: none;
@@ -374,12 +426,12 @@ body {
 }
 
 .signup-input::placeholder {
-    color: rgba(25, 11, 38, 0.5);
+    color: rgba(253, 245, 230, 0.4);
 }
 
 .signup-input:focus {
-    border-color: var(--burnt-orange);
-    background: var(--white);
+    border-color: var(--mango-melody);
+    background: rgba(253, 245, 230, 0.08);
 }
 
 .signup-button {
@@ -407,7 +459,7 @@ body {
 
 .signup-note {
     font-size: 0.75rem;
-    color: rgba(25, 11, 38, 0.5);
+    color: rgba(253, 245, 230, 0.4);
     letter-spacing: 0.05em;
 }
 
@@ -433,7 +485,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--electric-purple);
+    background: linear-gradient(135deg, var(--melon-mambo), var(--fresh-fig));
     border-radius: 50%;
 }
 
@@ -448,12 +500,12 @@ body {
     font-weight: 600;
     letter-spacing: 0.05em;
     margin-bottom: 0.75rem;
-    color: var(--ink);
+    color: var(--cream);
 }
 
 .feature-text {
     font-size: 0.85rem;
-    color: rgba(25, 11, 38, 0.65);
+    color: rgba(253, 245, 230, 0.6);
     line-height: 1.6;
 }
 
@@ -461,14 +513,14 @@ body {
 footer {
     padding: 3rem 2rem;
     text-align: center;
-    border-top: 1px solid rgba(25, 11, 38, 0.12);
+    border-top: 1px solid rgba(253, 245, 230, 0.1);
 }
 
 .footer-brand {
     font-size: 1.5rem;
     font-weight: 900;
     letter-spacing: -0.02em;
-    color: var(--burnt-orange);
+    color: var(--mango-melody);
     margin-bottom: 1rem;
 }
 
@@ -485,7 +537,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(25, 11, 38, 0.06);
+    background: rgba(253, 245, 230, 0.05);
     border-radius: 50%;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -501,16 +553,12 @@ footer {
 .social-link svg {
     width: 18px;
     height: 18px;
-    fill: var(--ink);
-}
-
-.social-link:hover svg {
     fill: var(--cream);
 }
 
 .copyright {
     font-size: 0.75rem;
-    color: rgba(25, 11, 38, 0.5);
+    color: rgba(253, 245, 230, 0.4);
     letter-spacing: 0.1em;
 }
 

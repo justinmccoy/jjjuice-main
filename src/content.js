@@ -52,7 +52,7 @@ export const content = {
       {
         name: "Mad Hot Salsa",
         tagline: "Klassisch. Feurig. Unvergesslich.",
-        description: "Entstanden unter blutroten Sonnenuntergängen in West-Texas — und die merkt man. Feuergeröstete Chilis bringen die Schärfe, wie wir sie in Austin lieben gelernt haben: kräftig, rauchig, kompromisslos. Die Salsa für lange Margarita-Abende, eiskalte Bäder in Quellseen und Tische voller Freunde, die immer noch einen Chip nachlegen. Mad hot. Verdammt gut.",
+        description: "Feuergeröstete Chilis, reife Tomaten, ordentlich Schärfe. Das Rezept kommt aus unseren Jahren in Austin und West-Texas — dort haben wir gelernt, wie Salsa schmecken muss. Rauchig, direkt, ohne Kompromisse. Handgemacht in München, in kleinen Chargen.",
         ingredients: "Tomaten, Chipotle, Knoblauch, Zwiebel, Koriander, Limette, Salz",
         image: "/mad-hot.png",
         imageAlt: "Mad Hot Salsa"
@@ -60,7 +60,7 @@ export const content = {
       {
         name: "Nice'n'Mild Salsa",
         tagline: "Frisch. Herb. Unwiderstehlich.",
-        description: "Der ganze tiefe, mexikanisch inspirierte Geschmack unserer Texas-Jahre — geröstete Tomaten, geschmorte Chilis, lange Abende, an denen Rezepte über den Tisch wandern — nur ohne das Feuer. Mild genug für alle am Tisch, von der Oma bis zu den Kleinen. Sonnenuntergang im Glas: warm, sanft und zum Teilen gemacht.",
+        description: "Dieselben gerösteten Tomaten und Chilis, derselbe Geschmack aus Texas — nur ohne die Schärfe. Mild, rauchig, ausgewogen. Für alle, die gutes Essen gern teilen. Handgemacht in München, in kleinen Chargen.",
         ingredients: "Tomatillos, Jalapeño, Knoblauch, Zwiebel, Koriander, Limette, Salz",
         image: "/nice-n-mild.png",
         imageAlt: "Nice'n'Mild Salsa"

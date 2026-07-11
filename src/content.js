@@ -1,7 +1,7 @@
 // Static text content for JJJUICE website
 export const content = {
   meta: {
-    title: "JJJUICE",
+    title: "JJ's Juice",
     language: "de"
   },
   

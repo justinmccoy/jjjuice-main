@@ -24,7 +24,7 @@ const ComingSoon = () => {
 
   return (
     <section className="coming-soon" id="notify">
-      <span className="section-title">{content.comingSoon.sectionTitle}</span>
+      {content.comingSoon.sectionTitle && <span className="section-title">{content.comingSoon.sectionTitle}</span>}
       
       <div className="signup">
         <form className="signup-form" onSubmit={handleSubmit}>

@@ -1,7 +1,7 @@
 // Static text content for JJJUICE website
 export const content = {
   meta: {
-    title: "JJJUICE | Bald Erhältlich",
+    title: "JJJUICE",
     language: "de"
   },
   
@@ -17,7 +17,7 @@ export const content = {
   },
   
   comingSoon: {
-    sectionTitle: "Bald Erhältlich",
+    sectionTitle: "",
     countdown: {
       days: "Tage",
       hours: "Stunden",
@@ -25,8 +25,8 @@ export const content = {
       seconds: "Sekunden"
     },
     signup: {
-      placeholder: "Deine E-Mail-Adresse",
-      button: "Dabei",
+      placeholder: "E-Mail abonnieren",
+      button: "Abonnieren",
       note: "Sei der Erste, der probiert. Kein Spam, nur Salsa.",
       alertMessage: "¡Gracias! Wir informieren dich als Erstes."
     },

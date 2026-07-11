@@ -46,6 +46,26 @@ export const content = {
     ]
   },
   
+  salsas: {
+    sectionTitle: "Unsere Salsas",
+    products: [
+      {
+        name: "Salsa Roja",
+        tagline: "Klassisch. Feurig. Unvergesslich.",
+        description: "Unsere Salsa Roja ist ein Rezept aus der Familientradition – langsam geröstet, handgemahlen und mit genau der richtigen Schärfe. Perfekt zu Tacos, Nachos oder direkt vom Löffel.",
+        ingredients: "Tomaten, Chipotle, Knoblauch, Zwiebel, Koriander, Limette, Salz",
+        imageAlt: "Salsa Roja"
+      },
+      {
+        name: "Salsa Verde",
+        tagline: "Frisch. Herb. Unwiderstehlich.",
+        description: "Tomatillos, grüne Chilis und frischer Koriander vereinen sich zu einer Salsa, die gleichzeitig frisch und komplex schmeckt. Ideal zu gegrilltem Fleisch oder als Dip.",
+        ingredients: "Tomatillos, Jalapeño, Knoblauch, Zwiebel, Koriander, Limette, Salz",
+        imageAlt: "Salsa Verde"
+      }
+    ]
+  },
+
   footer: {
     brand: "JJJUICE",
     copyright: "© 2026 JJJ GMBH. ALLE RECHTE VORBEHALTEN"

@@ -27,7 +27,7 @@ const Hero = () => {
       <div className="hero-right">
         <div className="logo-container">
           <div className="logo-glow"></div>
-          <img src="/logo.png" alt={content.hero.logoAlt} />
+          <img src="/jjjuice-logo.png" alt={content.hero.logoAlt} />
         </div>
       </div>
     </section>
